@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "microbundle watch",
     "prepublishOnly": "npm run build",
-    "build": "microbundle-crl build"
+    "build": "microbundle --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react --globals react/jsx-runtime=jsx"
   },
   "author": "Craig Lewiston <craig@modselect.com>",
   "license": "MIT",
@@ -35,11 +35,15 @@
     "@babel/preset-env": "^7.23.9",
     "@babel/preset-react": "^7.23.3",
     "@types/react": "^18.2.55",
-    "microbundle-crl": "^0.13.11",
+    "microbundle": "^0.15.1",
     "react": "^18.2.0"
   },
   "dependencies": {
-    "@radix-ui/themes": "^2.0.3"
+    "@huggingface/inference": "^2.6.4",
+    "@mui/icons-material": "^5.15.8",
+    "@mui/material": "^5.15.7",
+    "@radix-ui/themes": "^2.0.3",
+    "next": "^14.1.0"
   },
   "repository": {
     "type": "git",

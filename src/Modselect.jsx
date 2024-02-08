@@ -2,7 +2,7 @@ import { Card } from '@radix-ui/themes';
 import React from 'react';
 import { HuggingFace } from './HuggingFace';
 
-export const OpenAI = (props) => {
+const OpenAI = (props) => {
   return (
     <div>
       Modselect.OpenAI
@@ -10,7 +10,7 @@ export const OpenAI = (props) => {
   )
 }
 
-export const Gemini = (props) => {
+const Gemini = (props) => {
   return (
     <div>
       Modselect.Gemini
@@ -30,9 +30,8 @@ const Modselect = ({ mID, API_KEY }) => {
   );
 };
 
-export default {
-  Modselect: Modselect,
-  HuggingFace: HuggingFace,
-  OpenAI: OpenAI,
-  Gemini: Gemini
-}
+export { Modselect } 
+export { HuggingFace }
+export { OpenAI }
+export { Gemini } 
+  
