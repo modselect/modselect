@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import { useRef, useState } from 'react'
-import AddPhotoAlternateOutlinedIcon from '@mui/icons-material/AddPhotoAlternateOutlined';
 import { Card } from '@radix-ui/themes';
 
 const ImageSelector = ({onChange}) => {
@@ -77,8 +76,7 @@ const ImageSelector = ({onChange}) => {
                         alt="Input an Image"
                         
                         />
-
-                      <AddPhotoAlternateOutlinedIcon />
+                      +
                     </div>
                     </Card>
                   )}

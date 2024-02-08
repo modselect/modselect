@@ -2,13 +2,16 @@ const path = require('path');
 
 module.exports = {
   mode: 'production',
-  entry: './src/Modselect.jsx',
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'modselect.js',
-    libraryTarget: 'umd',
-    library: 'modselect',
+    filename: 'index.js',
+    library: {
+      name: 'modselect',
+      type: 'umd'
+    }
   },
+  target: 'node',
   module: {
     rules: [
       {
@@ -21,6 +24,13 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      }
     ],
   },
   resolve: {

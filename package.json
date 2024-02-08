@@ -1,7 +1,6 @@
 {
   "name": "modselect",
-  "version": "0.0.3",
-  "type": "commonjs",
+  "version": "0.0.4",
   "description": "Modselect nodejs package",
   "main": "dist/index.js",
   "scripts": {
@@ -42,13 +41,20 @@
   },
   "dependencies": {
     "@huggingface/inference": "^2.6.4",
-    "@mui/icons-material": "^5.15.8",
-    "@mui/material": "^5.15.7",
     "@radix-ui/themes": "^2.0.3",
     "next": "^14.1.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/modselect/modselect.git"
+  },
+  "babel": {
+    "presets": [
+			"@babel/preset-react",
+			"@babel/preset-env"
+	  ]
+  },
+  "exports": {
+    "import": "./dist/index.js"
   }
 }
