@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "microbundle watch",
     "prepublishOnly": "npm run build",
-    "build": "microbundle"
+    "build": "microbundle-crl build"
   },
   "author": "Craig Lewiston <craig@modselect.com>",
   "license": "MIT",
@@ -35,7 +35,7 @@
     "@babel/preset-env": "^7.23.9",
     "@babel/preset-react": "^7.23.3",
     "@types/react": "^18.2.55",
-    "microbundle": "^0.15.1",
+    "microbundle-crl": "^0.13.11",
     "react": "^18.2.0"
   },
   "dependencies": {
