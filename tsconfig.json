@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+      "target": "esnext",
+      "module": "commonjs",
+      "lib": ["dom", "es2015", "es2017", "es2018", "es2019", "es2020", "es2021"],
+      "jsx": "react",
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,
+      "isolatedModules": true,
+      "resolveJsonModule": true,
+      "noEmit": true,
+      "strictPropertyInitialization": false
+    },
+    "include": ["**/*.ts", "**/*.tsx", "src"],
+    "exclude": ["node_modules"],
+  }

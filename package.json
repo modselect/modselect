@@ -1,0 +1,44 @@
+{
+  "name": "modselect",
+  "version": "0.0.1",
+  "type": "module",
+  "source": "src/Modselect.jsx",
+  "description": "Modselect nodejs package",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "unpkg": "dist/index.umd.js",
+  "scripts": {
+    "dev": "microbundle watch",
+    "prepublishOnly": "npm run build",
+    "build": "microbundle"
+  },
+  "author": "Craig Lewiston <craig@modselect.com>",
+  "license": "MIT",
+  "keywords": [
+    "AI",
+    "Open AI",
+    "Hugging Face",
+    "Gemini",
+    "Models",
+    "npm",
+    "react",
+    "component",
+    "UI"
+  ],
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "@babel/preset-react": "^7.23.3",
+    "@types/react": "^18.2.55",
+    "microbundle": "^0.15.1",
+    "react": "^18.2.0"
+  },
+  "dependencies": {
+    "@radix-ui/themes": "^2.0.3"
+  }
+}
