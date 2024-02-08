@@ -8,12 +8,19 @@ To install the "modselect" npm package, use the following command:
 
 ```bash
 npm install modselect
-
+```
 
 ## Usage
 
+### Import
+```javascript
+import Modselect from 'modselect';
+```
+
+### Hugging Face
 ```javascript
 <Modselect.HuggingFace 
-                type="image-to-text"
-                API_KEY="hf_apiKey" 
-                model="Salesforce/blip-image-captioning-large" />
+    type="image-to-text"
+    API_KEY="hf_apiKey" 
+    model="Salesforce/blip-image-captioning-large" />
+```
