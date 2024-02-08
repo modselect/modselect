@@ -1,11 +1,4 @@
-import React from 'react';
 import HuggingFaceImageToTextCard from './HuggingFaceImageToTextCard'
-
-// interface HuggingFaceProps {
-//     API_KEY: string;
-//     type: string;
-//     model: string;
-// }
 
 export const HuggingFace = (props) => {
   const type = props.type

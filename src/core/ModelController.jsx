@@ -1,5 +1,3 @@
-"use client"
-
 import { HfInference } from "@huggingface/inference";
 import OpenAI from "openai";
 const { GoogleGenerativeAI } = require("@google/generative-ai");

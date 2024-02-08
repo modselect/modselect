@@ -1,4 +1,3 @@
-import { CircularProgress } from '@mui/material';
 import ImageSelector from './core/ImageSelector'
 import { useState } from 'react'
 import { Button, Card, TextArea } from '@radix-ui/themes';
@@ -33,7 +32,7 @@ const HuggingFaceImageToTextCard = ({model, API_KEY}) => {
     return (
         <Card>
             <ImageSelector onChange={imageChange}/>
-            {isLoading && <CircularProgress />}
+            {isLoading && <div>Loading...</div>}
             {!isLoading && <Button onClick={runButtonClicked}>
                 Run
             </Button>}

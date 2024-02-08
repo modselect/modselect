@@ -1,16 +1,11 @@
 {
   "name": "modselect",
   "version": "0.0.3",
-  "type": "module",
-  "source": "src/Modselect.jsx",
+  "type": "commonjs",
   "description": "Modselect nodejs package",
   "main": "dist/index.js",
-  "module": "dist/index.module.js",
-  "unpkg": "dist/index.umd.js",
   "scripts": {
-    "dev": "microbundle watch",
-    "prepublishOnly": "npm run build",
-    "build": "microbundle --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react --globals react/jsx-runtime=jsx"
+    "build": "webpack"
   },
   "author": "Craig Lewiston <craig@modselect.com>",
   "license": "MIT",
@@ -32,11 +27,18 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.23.9",
+    "@babel/plugin-proposal-function-bind": "^7.23.3",
     "@babel/preset-env": "^7.23.9",
     "@babel/preset-react": "^7.23.3",
+    "@babel/preset-stage-0": "^7.8.3",
     "@types/react": "^18.2.55",
-    "microbundle": "^0.15.1",
-    "react": "^18.2.0"
+    "babel-loader": "^9.1.3",
+    "path": "^0.12.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "@huggingface/inference": "^2.6.4",
