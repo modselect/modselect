@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { useRef, useState } from 'react'
 import AddPhotoAlternateOutlinedIcon from '@mui/icons-material/AddPhotoAlternateOutlined';
-import whiteSquare from './white_square.jpeg'
 import { Card } from '@radix-ui/themes';
 
 const ImageSelector = ({onChange}) => {
@@ -73,7 +72,7 @@ const ImageSelector = ({onChange}) => {
                     >
                       <Image 
                         width="200" height="200"
-                        src={whiteSquare}
+                        
                         priority
                         alt="Input an Image"
                         

@@ -1,5 +1,5 @@
 import { CircularProgress } from '@mui/material';
-import ImageSelector from '@/app/server/components/cards/ImageSelector'
+import ImageSelector from './core/ImageSelector'
 import { useState } from 'react'
 import { Button, Card, TextArea } from '@radix-ui/themes';
 import { HfInference } from "@huggingface/inference";
