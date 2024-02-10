@@ -45,8 +45,13 @@ import { HuggingFace, Gemini } from "modselect"
     type="image-to-text"
     API_KEY={GOOGLE_AI_KEY}
     model="gemini-pro-vision"/>
+
+<Gemini 
+    type="text-to-text"
+    API_KEY={GOOGLE_AI_KEY}
+    model="gemini-pro"/>
 ```
 
 
 ## Usage
-Currently only Gemini and Hugging Face modules are working, OpenAI is still under development.
+Currently only Google/Gemini and Hugging Face modules are working, OpenAI is still under development.  The configurations above are the only current working configurations.
