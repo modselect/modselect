@@ -1,6 +1,6 @@
 {
   "name": "modselect",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Modselect nodejs package",
   "main": "dist/index.js",
   "scripts": {
@@ -9,15 +9,24 @@
   "author": "Craig Lewiston <craig@modselect.com>",
   "license": "MIT",
   "keywords": [
-    "AI",
-    "Open AI",
-    "Hugging Face",
-    "Gemini",
-    "Models",
     "npm",
     "react",
     "component",
-    "UI"
+    "UI",
+    "Models",
+    "AI",
+    "Open AI",
+    "Hugging Face",
+    "Google",
+    "Open Source",
+    "Gemini",
+    "image-to-text",
+    "text-to-text",
+    "text-generation",
+    "text-to-image",
+    "text-to-audio",
+    "gpt",
+    "ChatGPT"
   ],
   "peerDependencies": {
     "react": "^18.2.0",
@@ -48,12 +57,11 @@
     "@mui/icons-material": "^5.15.9",
     "@radix-ui/themes": "^2.0.3",
     "fs": "^0.0.1-security",
-    "openai": "^4.27.0",
-    "react-dropzone": "^14.2.3"
+    "openai": "^4.27.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/modselect/modselect.git"
+    "url": "git+https://github.com/modselect/modselect.git"
   },
   "babel": {
     "presets": [

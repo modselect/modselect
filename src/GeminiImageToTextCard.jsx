@@ -10,7 +10,6 @@ const GeminiImageToTextCard = ({model, API_KEY}) => {
     const [inputImage, setInputImage] = useState(null);
     const [result, setResult] = useState("")
     const modelProvider = "Google"
-    console.log('model setup', model)
     const modelName = model
 
     const imageChange = (v) => {
@@ -23,10 +22,7 @@ const GeminiImageToTextCard = ({model, API_KEY}) => {
         setResult("")
 
         const genAI = new GoogleGenerativeAI(API_KEY);
-        
-
         const model = genAI.getGenerativeModel({ model: modelName });
-
         const prompt = "What’s in this image?";
         const base64Image2 = await getBase64(inputImage)
         let fixed_base_string = base64Image2.replace("data:image/jpeg;base64,","")
