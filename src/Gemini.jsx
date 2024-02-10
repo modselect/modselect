@@ -1,5 +1,6 @@
 import React from 'react';
 import GeminiImageToTextCard from './GeminiImageToTextCard';
+import GeminiTextToTextCard from './GeminiTextToTextCard';
 
 export const Gemini = (props) => {
   const type = props.type
@@ -14,11 +15,11 @@ export const Gemini = (props) => {
         <GeminiImageToTextCard model={props.model} API_KEY={props.API_KEY} />
       )
       break;
-    // case 'text-to-text':
-    //   return (
-    //     <HuggingFaceTextToTextCard model={props.model} API_KEY={props.API_KEY} />
-    //   )
-    //   break;
+    case 'text-to-text':
+      return (
+        <GeminiTextToTextCard model={props.model} API_KEY={props.API_KEY} />
+      )
+      break;
     // case 'text-to-audio':
     //   return (
     //     <HuggingFaceTextToAudioCard model={props.model} API_KEY={props.API_KEY} />

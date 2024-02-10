@@ -18,12 +18,12 @@ const HuggingFaceTextToImageCard = ({model, API_KEY}) => {
         setIsLoading(true)
         setResult("")
 
-        const IFresult = await inference.imageToText({
-            data: inputImage,
+        const IFresult = await inference.textToImage({
+            data: prompt,
             model: model
         })
         setIsLoading(false)
-        setResult(IFresult.generated_text)
+        setResult(URL.createObjectURL(IFresult))
     }
     
 

@@ -24,7 +24,6 @@ const GeminiImageToTextCard = ({model, API_KEY}) => {
 
         const genAI = new GoogleGenerativeAI(API_KEY);
         
-        console.log('this is the model', modelName, API_KEY)
 
         const model = genAI.getGenerativeModel({ model: modelName });
 
