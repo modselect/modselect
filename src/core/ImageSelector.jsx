@@ -1,12 +1,18 @@
-import Image from 'next/image'
-import { useRef, useState } from 'react'
-import { Card } from '@radix-ui/themes';
+import React, { useRef, useState, useEffect } from 'react'
+import AddPhotoAlternateOutlinedIcon from '@mui/icons-material/AddPhotoAlternateOutlined';
+import whiteSquare from './Assets/white_square.jpeg'
 
-const ImageSelector = ({onChange}) => {
+const ImageSelector = ({onChange, isCleared}) => {
     const [selectedImage, setSelectedImage] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
     const [imageFile, setImageFile] = useState(null);
     const fileInputRef = useRef(null);
+
+    useEffect(() => {
+      if (isCleared) {
+        setSelectedImage(null)
+        setImageFile(null)
+      }
+    })
 
     const imageLoaded = async(e) => {
         // console.log('image loaded', e )
@@ -47,38 +53,29 @@ const ImageSelector = ({onChange}) => {
                   {selectedImage ? (
                     <div>
                       <div
-
                           onDrop={handleDrop}
                           onDragOver={handleDragOver}
                           onClick={openFileSelector}>
-                          
-                          <Image
-                          
-                          width="200" height="200"
-                          src={selectedImage}
-                          alt="Selected"
-                          // className="w-200 h-200 bg-gray-200 border border-dashed border-gray-400 p-2"
-                          onLoad={imageLoaded}
-                          />
+                          <img 
+                            width="200" 
+                            height="200" 
+                            src={selectedImage} 
+                            alt='Input an Image' onLoad={imageLoaded}/>
                       </div>
                     </div>
                   ) : (
-                    <Card>
                     <div
                       onDrop={handleDrop}
                       onDragOver={handleDragOver}
                       onClick={openFileSelector}
                     >
-                      <Image 
-                        width="200" height="200"
-                        
-                        priority
-                        alt="Input an Image"
-                        
-                        />
-                      +
+                      <img 
+                        width="200" 
+                        height="200" 
+                        src={whiteSquare} 
+                        alt='Input an Image'/>
+                      <AddPhotoAlternateOutlinedIcon />
                     </div>
-                    </Card>
                   )}
                   <input
                     type="file"
@@ -89,7 +86,6 @@ const ImageSelector = ({onChange}) => {
                     onChange={handleFileInputChange}
                   />
                 </div>
-                
               </div>
     )
 };

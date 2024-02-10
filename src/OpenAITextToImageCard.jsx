@@ -1,18 +1,17 @@
-import ImageSelector from './core/ImageSelector'
 import React, { useState } from 'react'
 import { Flex, Button, TextArea, Card } from '@radix-ui/themes';
 import { HfInference } from "@huggingface/inference";
+import PromptSelector from './core/PromptSelector'
 
-const HuggingFaceImageToTextCard = ({model, API_KEY}) => {
+const OpenAITextToImageCard = ({model, API_KEY}) => {
     const [isLoading, setIsLoading] = useState(false);
     const [isCleared, setIsCleared] = useState(false);
-    const [inputImage, setInputImage] = useState(null);
-    const [result, setResult] = useState("")
+    const [prompt, setPrompt] = useState('');
+    const [result, setResult] = useState(null)
     const inference = new HfInference(API_KEY);
 
-    const imageChange = (v) => {
-        setInputImage(v)
-        setIsCleared(false)
+    const promptChange = (v) => {
+        setPrompt(v)
     }
 
     const runButtonClicked = async () => {
@@ -26,13 +25,11 @@ const HuggingFaceImageToTextCard = ({model, API_KEY}) => {
         setIsLoading(false)
         setResult(IFresult.generated_text)
     }
-    const handleResultTextAreaChange = () => {
-
-    }
+    
 
     const clearButtonClicked = async () => {
-        setInputImage(null)
-        setResult('')
+        setPrompt('')
+        setResult(null)
         setIsLoading(false)
         await setIsCleared(true)
         await setIsCleared(false)
@@ -40,11 +37,12 @@ const HuggingFaceImageToTextCard = ({model, API_KEY}) => {
 
     return (
         <Card>
-            <ImageSelector onChange={imageChange} isCleared={isCleared} />
+            <PromptSelector onChange={promptChange} isCleared={isCleared} />
             <div>Provider: Hugging Face</div>
             <div>Model: {model}</div>
+            
+            {result && <img src={result} width="200" height="200" alt="an output image" />}
 
-            <TextArea placeholder='Output' value={result} onChange={handleResultTextAreaChange} />
             <Flex direction="row" justify="between">
                 <Button variant="outline" onClick={clearButtonClicked}>
                     Clear
@@ -58,4 +56,4 @@ const HuggingFaceImageToTextCard = ({model, API_KEY}) => {
     )
 };
 
-export default HuggingFaceImageToTextCard;
+export default OpenAITextToImageCard;

@@ -1,14 +1,14 @@
 import ImageSelector from './core/ImageSelector'
 import React, { useState } from 'react'
 import { Flex, Button, TextArea, Card } from '@radix-ui/themes';
-import { HfInference } from "@huggingface/inference";
+import {OpenAI as OpenAI_API} from "openai";
+// import getBase64 from './core/utilities/getBase64'
 
-const HuggingFaceImageToTextCard = ({model, API_KEY}) => {
+const OpenAIImageToTextCard = ({model, API_KEY}) => {
     const [isLoading, setIsLoading] = useState(false);
     const [isCleared, setIsCleared] = useState(false);
     const [inputImage, setInputImage] = useState(null);
     const [result, setResult] = useState("")
-    const inference = new HfInference(API_KEY);
 
     const imageChange = (v) => {
         setInputImage(v)
@@ -19,12 +19,29 @@ const HuggingFaceImageToTextCard = ({model, API_KEY}) => {
         setIsLoading(true)
         setResult("")
 
-        const IFresult = await inference.imageToText({
-            data: inputImage,
-            model: model
-        })
-        setIsLoading(false)
-        setResult(IFresult.generated_text)
+        // const openai = new OpenAI_API({apiKey: API_KEY, dangerouslyAllowBrowser: true});
+        // const base64Image = await getBase64(inputImage)
+        // const response = await openai.chat.completions.create({
+        //     model: model,
+        //     messages: [
+        //     {
+        //         role: "user",
+        //         content: [
+        //         { type: "text", text: "What’s in this image?" },
+        //         {
+        //             type: "image_url",
+        //             image_url: {
+        //                 "url": base64Image
+        //             },
+        //         },
+        //         ],
+        //     },
+        //     ],
+        // });
+        // const responseString = response.choices[0].message.content
+
+        // setIsLoading(false)
+        // setResult(responseString)
     }
     const handleResultTextAreaChange = () => {
 
@@ -58,4 +75,4 @@ const HuggingFaceImageToTextCard = ({model, API_KEY}) => {
     )
 };
 
-export default HuggingFaceImageToTextCard;
+export default OpenAIImageToTextCard;

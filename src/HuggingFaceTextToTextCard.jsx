@@ -1,33 +1,29 @@
-import ImageSelector from './core/ImageSelector'
 import React, { useState } from 'react'
-import { Flex, Button, TextArea, Card } from '@radix-ui/themes';
+import { Flex, Button, Card } from '@radix-ui/themes';
 import { HfInference } from "@huggingface/inference";
+import PromptSelector from './core/PromptSelector'
 
-const HuggingFaceImageToTextCard = ({model, API_KEY}) => {
+const HuggingFaceTextToTextCard = ({model, API_KEY}) => {
     const [isLoading, setIsLoading] = useState(false);
+    const [prompt, setPrompt] = useState(null);
     const [isCleared, setIsCleared] = useState(false);
-    const [inputImage, setInputImage] = useState(null);
     const [result, setResult] = useState("")
     const inference = new HfInference(API_KEY);
 
-    const imageChange = (v) => {
-        setInputImage(v)
-        setIsCleared(false)
+    const promptChange = (v) => {
+        setPrompt(v)
     }
 
     const runButtonClicked = async () => {
         setIsLoading(true)
         setResult("")
 
-        const IFresult = await inference.imageToText({
-            data: inputImage,
+        const IFresult = await inference.textGeneration({
+            inputs: prompt,
             model: model
         })
         setIsLoading(false)
         setResult(IFresult.generated_text)
-    }
-    const handleResultTextAreaChange = () => {
-
     }
 
     const clearButtonClicked = async () => {
@@ -40,11 +36,11 @@ const HuggingFaceImageToTextCard = ({model, API_KEY}) => {
 
     return (
         <Card>
-            <ImageSelector onChange={imageChange} isCleared={isCleared} />
+            <PromptSelector onChange={promptChange} isCleared={isCleared} />
             <div>Provider: Hugging Face</div>
             <div>Model: {model}</div>
 
-            <TextArea placeholder='Output' value={result} onChange={handleResultTextAreaChange} />
+            <PromptSelector onChange={promptChange} />
             <Flex direction="row" justify="between">
                 <Button variant="outline" onClick={clearButtonClicked}>
                     Clear
@@ -58,4 +54,4 @@ const HuggingFaceImageToTextCard = ({model, API_KEY}) => {
     )
 };
 
-export default HuggingFaceImageToTextCard;
+export default HuggingFaceTextToTextCard;

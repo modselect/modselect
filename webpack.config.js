@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -30,7 +30,17 @@ module.exports = {
           'style-loader',
           'css-loader'
         ]
-      }
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i, 
+        use: {
+          loader: "file-loader?name=/public/icons/[name].[ext]",
+          options: {
+            name: '/public/icons/[name].[ext]',
+            outputPath: 'dist',
+          }
+        }
+    }
     ],
   },
   resolve: {
