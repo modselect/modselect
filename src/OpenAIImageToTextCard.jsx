@@ -1,8 +1,8 @@
 import ImageSelector from './core/ImageSelector'
 import React, { useState } from 'react'
 import { Flex, Button, TextArea, Card } from '@radix-ui/themes';
-import {OpenAI as OpenAI_API} from "openai";
-// import getBase64 from './core/utilities/getBase64'
+import OpenAI from "openai";
+import getBase64 from './core/utilities/getBase64'
 
 const OpenAIImageToTextCard = ({model, API_KEY}) => {
     const [isLoading, setIsLoading] = useState(false);
@@ -19,7 +19,7 @@ const OpenAIImageToTextCard = ({model, API_KEY}) => {
         setIsLoading(true)
         setResult("")
 
-        // const openai = new OpenAI_API({apiKey: API_KEY, dangerouslyAllowBrowser: true});
+        // const openai = new OpenAI({apiKey: API_KEY});
         // const base64Image = await getBase64(inputImage)
         // const response = await openai.chat.completions.create({
         //     model: model,

@@ -1,4 +1,5 @@
 const path = require('path');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   mode: 'development',
@@ -11,11 +12,20 @@ module.exports = {
       type: 'umd'
     }
   },
+  // devtool: 'source-map',
+  optimization: {
+    minimize: false,
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+      }),
+    ],
+  },
   target: 'node',
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|.ts|.tsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -40,28 +50,19 @@ module.exports = {
             outputPath: 'dist',
           }
         }
-    }
+      },
+      // {
+      //   test: /\.js$/,
+      //   enforce: "pre",
+      //   use: ["source-map-loader"],
+      // },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
-    alias: {
-        'react': path.resolve(__dirname, './node_modules/react'),
-        'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
-      }
+    extensions: ['.js', '.jsx', ".ts", ".tsx"]
   },
   externals: {
-    react: {
-      commonjs: "react",
-      commonjs2: "react",
-      amd: "React",
-      root: "React"
-    },
-    "react-dom": {
-      commonjs: "react-dom",
-      commonjs2: "react-dom",
-      amd: "ReactDOM",
-      root: "ReactDOM"
-    }
+    react: 'react',
+    "react-dom": 'react-dom'
   }
 };

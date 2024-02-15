@@ -1,6 +1,6 @@
 # Modselect
 
-Modselect is an npm package that simplifies the usage of various AI models, including ChatGPT, Gemini and models available on Hugging Face. It provides a convenient way to interact with models for tasks like image-to-text conversion, text-to-text generation, text-to-audio, and text-to-image.
+Modselect is an npm package that simplifies the usage of various AI models, including Google's Gemini and models available on Hugging Face. It provides a convenient way to interact with models for tasks like image-to-text conversion, text-to-text generation, text-to-audio, and text-to-image.
 
 The library is built on radix-ui, and currently has only been tested with Next.js.
 
@@ -9,6 +9,10 @@ The library is built on radix-ui, and currently has only been tested with Next.j
 ### Installation
 ```bash
 npm install modselect
+
+pnpm install modselect
+
+yarn add modselect
 ```
 
 ### Import
