@@ -1,6 +1,6 @@
 {
   "name": "modselect",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Modselect nodejs package",
   "main": "dist/index.js",
   "scripts": {
