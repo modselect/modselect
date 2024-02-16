@@ -1,3 +1,4 @@
+import React from 'react';
 import { TextArea } from '@radix-ui/themes';
 
 const OutputDisplay = ({outputText}) => {

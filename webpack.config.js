@@ -42,14 +42,10 @@ module.exports = {
         ]
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i, 
+        test: /\.(jpg|jpeg|png|gif|svg)$/i, 
         use: {
-          loader: "file-loader?name=/public/icons/[name].[ext]",
-          options: {
-            name: '/public/icons/[name].[ext]',
-            outputPath: 'dist',
-          }
-        }
+          loader: 'url-loader',
+        },
       },
       // {
       //   test: /\.js$/,

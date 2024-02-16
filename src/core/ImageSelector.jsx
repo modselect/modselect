@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 import AddPhotoAlternateOutlinedIcon from '@mui/icons-material/AddPhotoAlternateOutlined';
-import whiteSquare from './Assets/white_square.jpeg'
+import whiteSquare from './white_square.jpeg'
 
 const ImageSelector = ({onChange, isCleared}) => {
     const [selectedImage, setSelectedImage] = useState(null);
@@ -73,7 +73,7 @@ const ImageSelector = ({onChange, isCleared}) => {
                         width="200" 
                         height="200" 
                         src={whiteSquare} 
-                        alt='Input an Image'/>
+                        alt='Input an Image hello'/>
                       <AddPhotoAlternateOutlinedIcon />
                     </div>
                   )}

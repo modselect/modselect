@@ -1,6 +1,6 @@
 {
   "name": "modselect",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Modselect nodejs package",
   "main": "dist/index.js",
   "scripts": {
@@ -29,6 +29,9 @@
     "ChatGPT"
   ],
   "peerDependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@radix-ui/themes": "^2.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -39,24 +42,27 @@
     "@babel/preset-env": "^7.23.9",
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-stage-0": "^7.8.3",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@radix-ui/themes": "^2.0.3",
     "@types/react": "^18.2.55",
     "babel-loader": "^9.1.3",
+    "css-loader": "^6.10.0",
     "file-loader": "^6.2.0",
     "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "source-map-loader": "^5.0.0",
+    "style-loader": "^3.3.4",
     "terser-webpack-plugin": "^5.3.10",
+    "url-loader": "^4.1.1",
     "webpack": "^5.90.1",
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.3",
-    "@emotion/styled": "^11.11.0",
     "@google/generative-ai": "^0.2.0",
     "@huggingface/inference": "^2.6.4",
     "@mui/icons-material": "^5.15.10",
-    "@radix-ui/themes": "^2.0.3",
     "fs": "^0.0.1-security",
     "openai": "^4.27.0"
   },
