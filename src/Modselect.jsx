@@ -9,7 +9,7 @@ import '@radix-ui/themes/styles.css';
 import InfoIcon from '@mui/icons-material/Info';
 import CloseIcon from '@mui/icons-material/Close';
 
-const DEBUG = 1
+const DEBUG = 0
 const MODSELECT_API_URL = DEBUG ? "http://localhost:3000" : "https://modselect.com"
 
 const getBase64 = (file) => {
