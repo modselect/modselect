@@ -1,8 +1,8 @@
 # Modselect
 
-Modselect is an npm package that simplifies the usage of various AI models, including Google's Gemini and models available on Hugging Face. It provides a convenient way to interact with models for tasks like image-to-text conversion, text-to-text generation, text-to-audio, and text-to-image.
+Modselect is No Code AI Solution Platform.  Visit www.modselect.com for more information.
 
-The library is built on radix-ui, and currently has only been tested with Next.js.
+Modselect simplifies the usage of AI models, providing a convenient way to interact with models and implement AI solutions into your website or application.
 
 ## Usage
 
@@ -16,6 +16,20 @@ yarn add modselect
 ```
 
 ### Import
+```javascript
+import { Modselect } from "modselect"
+```
+### Custom Solution Implementation
+In order to use the Modselect library Solution tag, you must first create a Solution and Deployment in the WebUI.  Use the mID and API_KEY from your saved deployment and place this tag in your website/app.  Optionally, a debug tag is available which provides a simple popover for viewing Solution information.
+```javascript
+<Modselect mID={mID} API_KEY={API_KEY} />
+<Modselect mID={mID} API_KEY={API_KEY} debug />
+```
+
+## Development Mode
+
+The library also contains a developmet mode providing easy to use UI for Hugging Face and Gemini.  
+
 ```javascript
 import { HuggingFace, Gemini } from "modselect"
 ```
@@ -44,6 +58,7 @@ import { HuggingFace, Gemini } from "modselect"
 ```
 
 ### Google/Gemini
+***Google/Gemini development mode is currently not supported given the recent change to Vertex AI***
 ```javascript
 <Gemini 
     type="image-to-text"
@@ -55,7 +70,3 @@ import { HuggingFace, Gemini } from "modselect"
     API_KEY={GOOGLE_AI_KEY}
     model="gemini-pro"/>
 ```
-
-
-## Usage
-Currently only Google/Gemini and Hugging Face modules are working, OpenAI is still under development.  The configurations above are the only current working configurations.
