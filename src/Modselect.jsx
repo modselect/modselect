@@ -24,6 +24,7 @@ const getBase64 = (file) => {
 
 
 export const Modselect = ({ mID, API_KEY, debug=false }) => {
+  const [deploymentData, setDeploymentData] = useState(null);
   const [solutionData, setSolutionData] = useState(null);
   const [solutionType, setSolutionType] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -33,13 +34,14 @@ export const Modselect = ({ mID, API_KEY, debug=false }) => {
   const [debugView, setDebugView] = useState(debug);
 
   useEffect(() => {
-    getSolution().then((response) => {
-      setSolutionData(response)
-      setSolutionType(response.pipelineTypeId)
+    getDeplyment().then((response) => {
+      setDeploymentData(response)
+      setSolutionType(response.solution.pipelineTypeId)
+      setSolutionData(response.solution)
     })
     
   }, []);
-  const getSolution = async () => {
+  const getDeplyment = async () => {
     const url = `${MODSELECT_API_URL}/api/getDeployment`
     let result = await fetch(url, {
       method: 'POST',
@@ -60,8 +62,9 @@ export const Modselect = ({ mID, API_KEY, debug=false }) => {
     setResult("")
 
     let cardData = {
-        model: solutionData.model,
-        solution: solutionData
+        id: deploymentData.id,
+        model: deploymentData.solution.model,
+        solution: deploymentData.solution
     }
 
     if (solutionType==='image-to-text') {
