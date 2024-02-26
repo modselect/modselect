@@ -68,14 +68,23 @@ export const Modselect = ({ mID, API_KEY, debug=false }) => {
     }
 
     if (solutionType==='image-to-text') {
-      const base64Image2 = await getBase64(inputImage)
-      cardData["input"] = base64Image2
+        const base64Image2 = await getBase64(inputImage)
+        cardData["input"] = {
+          data: base64Image2,
+          prompt: prompt
+        }
     } else if (solutionType==='text-to-image') {
-        cardData["input"] = prompt
+        cardData["input"] = {
+          prompt: prompt
+        }
     } else if (solutionType==='text-to-text') {
-        cardData["input"] = prompt
+        cardData["input"] = {
+          prompt: prompt
+        }
     } else if (solutionType==='text-to-audio') {
-        cardData["input"] = prompt
+        cardData["input"] = {
+          prompt: prompt
+        }
     }
 
     let modelResult = await fetch(`${MODSELECT_API_URL}/api/runSolution`, {
@@ -97,19 +106,30 @@ export const Modselect = ({ mID, API_KEY, debug=false }) => {
         const text = json[0].generated_text
         setResult(text)
       }
+      if (solutionData.model.providerId === 'Google') {
+        const json = await modelResult.json()
+        const text = json.response.candidates[0].content.parts[0].text
+        setResult(text)
+      }
     } else if (solutionType==='text-to-image') {
       const imageBlob = await modelResult.blob()
       // console.log('imageBlob', imageBlob)
       const url = URL.createObjectURL(imageBlob)
       setResult(url)
     } else if (solutionType==='text-to-text') {
-      if (solutionData.model.pipelineTypeId === 'text-generation') {
+      if (solutionData.model.providerId === 'OpenAI') {
         const text = await modelResult.json()
         // console.log('text', text)
         setResult(text)
-      } else {
+      } 
+      if (solutionData.model.providerId === 'HuggingFace') {
         const json = await modelResult.json()
         const text = json[0].generated_text
+        setResult(text)
+      }
+      if (solutionData.model.providerId === 'Google') {
+        const json = await modelResult.json()
+        const text = json.response.candidates[0].content.parts[0].text
         setResult(text)
       }
     } else if (solutionType==='text-to-audio') {
