@@ -35,6 +35,8 @@ In order to use the Modselect library Solution tag, you must first create a Solu
 ```
 
 ## Stable Diffusion
+Now supporting a Stable Diffusion React UI, clone of [AUTOMATIC1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui). Runs against the normal route in the stable diffusion API: /sdapi/v1/img2img or /sdapi/v1/txt2img.  Includes a URL text field for configuring your local server.
+
 ```javascript
 import { StableDiffusionUI } from "modselect"
 <StableDiffusionUI  />
@@ -43,7 +45,7 @@ import { StableDiffusionUI } from "modselect"
 
 ## Development Mode
 
-The library also contains a developmet mode providing easy to use UI for Hugging Face and Gemini.  
+The library also contains a developmet mode providing easy to use UI for [Hugging Face](https://huggingface.co/) and [Gemini](https://ai.google.dev/models/gemini).  
 
 ```javascript
 import { HuggingFace, Gemini } from "modselect"
