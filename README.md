@@ -5,6 +5,9 @@ Modselect is No Code AI Solution Platform.  Visit www.modselect.com for more inf
 Modselect simplifies the usage of AI models, providing a convenient way to interact with models and implement AI solutions into your website or application.
 
 ### UPDATES:
+
+**v0.0.17** - Stable Diffusion UI has been added.
+
 **v0.0.14** - Support for Google Gemini API has been added, using the @google/generative-ai library.  This is not using the newer Vertex AI API, but instead the previous library version.  Support for Google's Vertex AI API will be in a future version of modselect.
 
 **v0.0.13** - you can now use your Hugging Face and OpenAI keys with yous custom solution.  Visit the Solution Builder at www.modselect.com and assign your own API key to your solution deployment.
@@ -30,6 +33,13 @@ In order to use the Modselect library Solution tag, you must first create a Solu
 <Modselect mID={mID} API_KEY={API_KEY} />
 <Modselect mID={mID} API_KEY={API_KEY} debug />
 ```
+
+## Stable Diffusion
+```javascript
+import { StableDiffusionUI } from "modselect"
+<StableDiffusionUI  />
+```
+
 
 ## Development Mode
 

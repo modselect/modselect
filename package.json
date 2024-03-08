@@ -1,6 +1,6 @@
 {
   "name": "modselect",
-  "version": "0.1.0",
+  "version": "0.0.17",
   "description": "Modselect nodejs package",
   "main": "dist/index.js",
   "scripts": {
@@ -26,7 +26,8 @@
     "text-to-image",
     "text-to-audio",
     "gpt",
-    "ChatGPT"
+    "ChatGPT",
+    "Stable Diffusion"
   ],
   "peerDependencies": {
     "@emotion/react": "^11.11.3",

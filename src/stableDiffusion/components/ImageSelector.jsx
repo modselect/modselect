@@ -55,10 +55,11 @@ const ImageSelector= ({ SDConfig, setSDConfig }) => {
                             src={SDConfig.init_images[0]}
                             alt='Input an Image' />}
                      {(SDConfig.init_images.length === 0) &&
-                        <div
+                        <img
                             width="512"
                             height="512"
-                             />}   
+                            src={whiteSquare}
+                            alt='Input an Image' />}   
                 </div>
                 <input
                     type="file"
