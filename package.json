@@ -1,6 +1,6 @@
 {
   "name": "modselect",
-  "version": "0.0.16",
+  "version": "0.1.0",
   "description": "Modselect nodejs package",
   "main": "dist/index.js",
   "scripts": {
@@ -63,8 +63,11 @@
     "@google/generative-ai": "^0.2.0",
     "@huggingface/inference": "^2.6.4",
     "@mui/icons-material": "^5.15.10",
+    "@radix-ui/react-progress": "^1.0.3",
     "fs": "^0.0.1-security",
-    "openai": "^4.27.0"
+    "openai": "^4.27.0",
+    "rc-slider": "^10.5.0",
+    "ts-loader": "^9.5.1"
   },
   "repository": {
     "type": "git",
